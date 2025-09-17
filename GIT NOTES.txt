@@ -1,0 +1,75 @@
+GIT --> VCS(Version control system): used to store the source code of your project.
+GITHUB: It is a service used to host the repository. 
+Remote Repository --> Project Folder in any repository hosting service
+Local Repository --> Project local folder
+Working directory --> working folder
+Staging area --> place to add required files and then commit them
+
+
+
+WORKING DIRECTORY   |   STAGING AREA        |          LOCAL REPOSITORY   |    REMOTE REPOSITORY 
+
+FILE.py        git add                  git commit		      git push
+example.txt   -------->  example.txt  ------------->	example.txt  ----------->example.txt
+example2.txt		 example2.txt			example2.txt		 example2.txt
+             we can add               it commit all the		     this will push
+	     only required            files.			     all the files.
+  	     files using 
+		add.
+
+commands:
+git init --> used to initialize a folder as git repository.
+
+git status --> it will give the state of working directory and staging area
+
+git add file_name.py  --> this will move the required file into staging area to commit into local repository
+
+git add .  --> this will move all the untracked files into staging area.
+
+git commit -m "message" --> locking them into history
+
+git push origin development --> this will push the local development branch into repo
+
+git push --all origin  --> this will push all the branches into remote repo
+
+git branch  --> to check the current branch
+
+git branch -a  --> lists all the branches in the local
+
+git branch -r --> list all the local and remote branches
+
+git branch development  --> create a new branch development
+
+git switch development  --> switches into development branch
+
+git branch -d branch-name  --> deletes the branch from the local repo
+
+git merge development  --> merges into the current branch
+
+git diff branch1..branch2  --> shows the difference between the branches
+
+git clone <https link>   --> clones the repository from the remote into the local
+
+git pull  --> pull the changes from remote branch which is linked to local branch
+
+git pull --all  --> pull all the branches from the remote
+
+git pull branch-name --> the changes from the mentioned branch into current branch.
+
+
+
+GITHUB ACTIONS FOR CI/CD:
+
+When ever a developer pushes the code into GitHub, this will trigger a workflow, which has particular steps to test your code.
+
+FIRST you have to create this path in GitHub repository: .GitHub/workflows/name.yml
+You will write the required checks in .yml file which will run based on event triggers
+
+KEYTERMS:
+Workflow: a series of jobs that runs together
+Jobs: a groups of steps that run together
+Step: a single task, like checking the code or running tests
+Runner: The computer/server that runs your job
+Trigger: decides when work flow runs
+Environment variables: settings for workflow
+Secrets: Password or API keys
