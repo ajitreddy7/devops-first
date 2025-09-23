@@ -1,0 +1,21 @@
+
+---
+name: RUNNING PYTHON CODE
+
+on: push
+
+jobs:
+  run-python-code:
+    name: running python code
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkoutcode
+        uses: actions/checkout@v3
+       
+      - name: setup - python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: running python script
+        run: python multiplication.py 
